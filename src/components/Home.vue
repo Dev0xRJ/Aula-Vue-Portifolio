@@ -16,7 +16,7 @@
     <div class="hero-content">
       <div class="profile-section">
         <div class="profile-photo-container">
-          <img src="@/assets/profile.png" alt="Minha foto" class="profile-photo" />
+          <img src="@/assets/Profile.png" alt="Minha foto" class="profile-photo" />
         </div>
         <div class="profile-text">
           <h1 class="name">Desenvolvedor Full Stack</h1>
