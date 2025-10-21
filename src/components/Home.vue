@@ -16,7 +16,7 @@
     <div class="hero-content">
       <div class="profile-section">
         <div class="profile-photo-container">
-          <img src="@/assets/Profile.png" alt="Minha foto" class="profile-photo" />
+          <img src="@/assets/my_photo.png" alt="Minha foto" class="profile-photo" />
         </div>
         <div class="profile-text">
           <h1 class="name">Desenvolvedor Full Stack</h1>
@@ -24,10 +24,22 @@
             Criando experiências digitais incríveis com tecnologias modernas
           </p>
           <div class="tech-stack">
-            <span class="tech-item">Vue.js</span>
-            <span class="tech-item">JavaScript</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">Node.js</span>
+            <span class="tech-item">
+              <i class="fab fa-vuejs"></i>
+              Vue.js
+            </span>
+            <span class="tech-item">
+              <i class="fab fa-js-square"></i>
+              JavaScript
+            </span>
+            <span class="tech-item">
+              <i class="fab fa-python"></i>
+              Python
+            </span>
+            <span class="tech-item">
+              <i class="fab fa-node-js"></i>
+              Node.js
+            </span>
           </div>
         </div>
       </div>
@@ -207,19 +219,38 @@ export default {
 }
 
 .tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: rgba(0, 204, 122, 0.1);
   border: 1px solid rgba(0, 204, 122, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
   font-size: 0.9rem;
   color: #00cc7a;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
+.tech-item i {
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+/* Cores específicas dos ícones */
+.tech-item:nth-child(1) i { color: #4FC08D; } /* Vue.js - verde */
+.tech-item:nth-child(2) i { color: #F7DF1E; } /* JavaScript - amarelo */
+.tech-item:nth-child(3) i { color: #3776AB; } /* Python - azul */
+.tech-item:nth-child(4) i { color: #68A063; } /* Node.js - verde escuro */
+
 .tech-item:hover {
   background: rgba(0, 204, 122, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 204, 122, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 204, 122, 0.4);
+}
+
+.tech-item:hover i {
+  transform: scale(1.2);
 }
 
 /* Responsive */
