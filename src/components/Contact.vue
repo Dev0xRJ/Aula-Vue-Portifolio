@@ -77,12 +77,8 @@
     <!-- Contato Direto -->
     <div class="direct-contact">
       <h2>Ou entre em contato diretamente</h2>
-      <p>
-        <a href="mailto:jjuniorrodrigue@gmail.com">
-          <i class="fas fa-envelope"></i> jjuniorrodrigue@gmail.com
-        </a>
-      </p>
-      <p>Voc? tamb?m pode me encontrar nas redes sociais:</p>
+      
+      <p>Voc? também pode me encontrar nas redes sociais:</p>
     </div>
     <ul>
       <li>
@@ -93,11 +89,6 @@
       <li>
         <a href="https://github.com/Dev0xRJ" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-github"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/raimundojuniordev/" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-whatsapp"></i>
         </a>
       </li>
     </ul>
@@ -412,7 +403,23 @@ ul li a i {
   }
 }
 
+
+
+/* Responsivo */
 @media (max-width: 768px) {
+  .repositories-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .repository-card {
+    padding: 1rem;
+  }
+  
+  .repo-name {
+    font-size: 1.1rem;
+  }
+  
   .container {
     padding: 0 1rem;
   }

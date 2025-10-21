@@ -16,7 +16,7 @@
     <div class="hero-content">
       <div class="profile-section">
         <div class="profile-photo-container">
-          <img src="@/assets/my_photo.png" alt="Minha foto" class="profile-photo" />
+          <img src="@/assets/profile.png" alt="Minha foto" class="profile-photo" />
         </div>
         <div class="profile-text">
           <h1 class="name">Desenvolvedor Full Stack</h1>
@@ -25,20 +25,16 @@
           </p>
           <div class="tech-stack">
             <span class="tech-item">
-              <i class="fab fa-vuejs"></i>
-              Vue.js
+              <font-awesome-icon :icon="['fab', 'vuejs']" class="vue-icon" />
             </span>
             <span class="tech-item">
-              <i class="fab fa-js-square"></i>
-              JavaScript
+              <font-awesome-icon :icon="['fab', 'js-square']" class="js-icon" />
             </span>
             <span class="tech-item">
-              <i class="fab fa-python"></i>
-              Python
+              <font-awesome-icon :icon="['fab', 'python']" class="python-icon" />
             </span>
             <span class="tech-item">
-              <i class="fab fa-node-js"></i>
-              Node.js
+              <font-awesome-icon :icon="['fab', 'node-js']" class="node-icon" />
             </span>
           </div>
         </div>
@@ -93,29 +89,29 @@ export default {
 
 .symbol {
   position: absolute;
-  color: rgba(0, 204, 122, 0.1);
+  color: rgba(0, 204, 122, 0.25);
   font-family: 'Fira Code', 'Consolas', monospace;
   font-weight: bold;
   animation: float 8s ease-in-out infinite;
-  text-shadow: 0 0 20px rgba(0, 204, 122, 0.3);
+  text-shadow: 0 0 25px rgba(0, 204, 122, 0.6);
 }
 
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
-    opacity: 0.1;
+    opacity: 0.25;
   }
   25% {
     transform: translateY(-20px) rotate(5deg);
-    opacity: 0.2;
+    opacity: 0.4;
   }
   50% {
     transform: translateY(-10px) rotate(-3deg);
-    opacity: 0.15;
+    opacity: 0.3;
   }
   75% {
     transform: translateY(-30px) rotate(8deg);
-    opacity: 0.25;
+    opacity: 0.45;
   }
 }
 
@@ -215,43 +211,74 @@ export default {
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .tech-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(0, 204, 122, 0.1);
-  border: 1px solid rgba(0, 204, 122, 0.3);
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  color: #00cc7a;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.tech-item i {
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
 }
 
 /* Cores específicas dos ícones */
-.tech-item:nth-child(1) i { color: #4FC08D; } /* Vue.js - verde */
-.tech-item:nth-child(2) i { color: #F7DF1E; } /* JavaScript - amarelo */
-.tech-item:nth-child(3) i { color: #3776AB; } /* Python - azul */
-.tech-item:nth-child(4) i { color: #68A063; } /* Node.js - verde escuro */
+.vue-icon { 
+  color: #4FC08D; 
+  filter: drop-shadow(0 0 8px rgba(79, 192, 141, 0.6));
+} /* Vue.js - verde */
 
-.tech-item:hover {
-  background: rgba(0, 204, 122, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 204, 122, 0.4);
+.js-icon { 
+  color: #F7DF1E; 
+  filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+} /* JavaScript - amarelo */
+
+.python-icon { 
+  color: #3776AB;
+  position: relative;
 }
 
-.tech-item:hover i {
-  transform: scale(1.2);
+.python-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  background: #3776AB;
+  mask: url('data:image/svg+xml,<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.4 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6H101.8c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101.8v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
+
+.python-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background: #FFD343;
+  mask: url('data:image/svg+xml,<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.4 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6H101.8c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101.8v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.python-icon svg {
+  opacity: 0;
+} /* Python - azul e amarelo oficiais */
+
+.node-icon { 
+  color: #68A063; 
+  filter: drop-shadow(0 0 8px rgba(104, 160, 99, 0.6));
+} /* Node.js - verde escuro */
 
 /* Responsive */
 @media (max-width: 768px) {
